@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceCategory android:title="@string/PrefCat1Title"  />
+	<com.suni.minimal_uhr.ColorPickerPreference android:title="@string/PrefFG" android:summary="@string/PFGSum" android:key="FG"/>    
+	<com.suni.minimal_uhr.ColorPickerPreference android:title="@string/PrefIn" android:summary="@string/PISum" android:key="BG" />
+	<com.suni.minimal_uhr.ColorPickerPreference android:title="@string/PrefBG" android:summary="@string/PBGSum" android:key="BG2" />
+    
+<PreferenceCategory android:title="@string/PrefCat2Title"/>
+<com.suni.minimal_uhr.SeekBarPreference android:title="@string/PrefFontSize" android:summary="@string/PFSSum" android:key="FS" />
+
+</PreferenceScreen>

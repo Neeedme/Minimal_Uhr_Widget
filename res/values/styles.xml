@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="suni.transparent">#DD000000</color>  
+    <style name="CustomTheme" parent="android:Theme.Translucent.NoTitleBar">
+    <item name="android:windowBackground">@color/suni.transparent</item>
+</style>
+<style name="HoloTheme" parent="@android:style/Theme.Black">
+    
+</style>
+</resources>

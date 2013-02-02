@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PressCenterAdvice">Drücken sie in die Mitte zur Bestätigung</string>  
+    <string name="BackPressedAlertYES">Ja</string>
+    <string name="BackPressedAlertNO">Nein</string>
+    <string name="BackPressedAlertTitle">Wollen sie die gewählte Farbe speichern?</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<TextView
+    android:id="@+id/TitleFontSizeDialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="#000"
+    android:background="@android:drawable/editbox_background_normal"  
+    android:gravity="center"
+    />
+
+<SeekBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/TitleFontSizeDialog" 
+    android:id="@+id/SeekbarFontSize"
+    android:progressDrawable="@drawable/progress"
+    
+     />
+<LinearLayout android:layout_below="@+id/SeekbarFontSize"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent" 
+    android:paddingTop="10dip">
+
+ <Button 
+     
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_weight="1"
+     android:text="@string/FontSizeYes" android:id="@+id/fontSizeYES"
+   
+      />
+ <Button 
+    
+     android:layout_width="match_parent"
+     android:layout_weight="1"
+     android:layout_height="wrap_content"
+     android:text="@string/FontSizeYNo" android:id="@+id/fontSizeNO"
+  
+      />
+</LinearLayout>
+</RelativeLayout>

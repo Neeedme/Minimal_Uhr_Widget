@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PressCenterAdvice">Press in the center to save color</string>  
+    <string name="BackPressedAlertYES">Yes</string>
+    <string name="BackPressedAlertNO">No</string>
+    <string name="BackPressedAlertTitle">Do you want to save the color?</string>
+</resources>

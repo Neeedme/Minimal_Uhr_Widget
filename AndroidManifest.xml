@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.suni.minimal_uhr"
+      android:versionCode="2"
+      android:versionName="42">
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17" />
+    
+    
+    <application 
+        android:icon="@drawable/icon" 
+        android:label="@string/app_name"
+        android:theme="@style/HoloTheme" >     
+        <activity 
+            android:name=".PrefActivity" 
+            android:label="@string/labelPref">
+              <intent-filter> 
+                  <action android:name="android.intent.action.MAIN" />
+					<category android:name="android.intent.category.LAUNCHER" /> 
+			 </intent-filter>
+         </activity>
+         
+         <activity 
+             android:name=".ColorPickerActivity" 
+             android:label="ColorPicker"
+             android:theme="@style/CustomTheme"
+             >
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.PREFERENCE" /> 
+         </activity>
+         <receiver android:name=".SUNIWidget" android:label="@string/app_name" android:exported="false">
+    		<intent-filter>
+        		<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+         		<action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+          		<action android:name="com.suni.minimal_uhr.Update"/>
+   			</intent-filter>
+   			<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info" />
+		  </receiver>
+
+   		  <service android:name=".UpdateService" 
+           	android:label="Text Uhr Widget Update Service" />           
+     </application>
+</manifest>

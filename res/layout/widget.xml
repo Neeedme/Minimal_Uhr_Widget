@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"  android:layout_margin="5dp"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+android:id="@+id/layout"
+
+>
+   <LinearLayout android:orientation="vertical" android:layout_height="match_parent"
+       android:layout_width="match_parent" android:layout_margin="5dp">
+        
+        
+        
+        <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center">
+            <LinearLayout android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center" android:id="@+id/bg1">"
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" />
+            </LinearLayout>
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <LinearLayout android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center" android:id="@+id/bg2">
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" />
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+        
+        <LinearLayout
+      		android:orientation="horizontal"
+      		android:layout_width="match_parent"
+      		android:layout_height="match_parent"
+      		android:layout_weight="1" android:gravity="center">
+      		<TextView android:text="E" android:id="@+id/w1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="S" android:id="@+id/w2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="K" android:id="@+id/w3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="I" android:id="@+id/w4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="S" android:id="@+id/w5" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="T" android:id="@+id/w6" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="A" android:id="@+id/w7" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="F" android:id="@+id/w8" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="Ü" android:id="@+id/w9" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w10" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="F" android:layout_width="match_parent" android:id="@+id/w11" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+        </LinearLayout>
+        
+        <LinearLayout
+      		android:orientation="horizontal" 
+      		android:layout_width="match_parent"
+      		android:layout_height="match_parent"
+      		android:layout_weight="1" android:gravity="center">
+            <TextView android:text="Z" android:id="@+id/w12" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w13" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w14" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w15" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="B" android:id="@+id/w16" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="Y" android:id="@+id/w17" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="G" android:id="@+id/w18" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="V" android:id="@+id/w19" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="O" android:id="@+id/w20" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="R" android:id="@+id/w21" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="G" android:id="@+id/w22" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+        </LinearLayout>
+        
+        <LinearLayout
+      		android:orientation="horizontal"
+      		android:layout_width="match_parent"
+      		android:layout_height="match_parent"
+      		android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="N" android:id="@+id/w23" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="A" android:id="@+id/w24" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="C" android:id="@+id/w25" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w26" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="V" android:id="@+id/w27" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="I" android:id="@+id/w28" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w29" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text="R" android:id="@+id/w30" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="T" android:id="@+id/w31" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w32" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="L" android:id="@+id/w33" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            
+        </LinearLayout>
+        <LinearLayout
+      		android:orientation="horizontal"
+      		android:layout_width="match_parent"
+     		 android:layout_height="match_parent"
+     		 android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="H" android:id="@+id/w34" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="A" android:id="@+id/w35" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="L" android:id="@+id/w36" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="B" android:id="@+id/w37" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="V" android:id="@+id/w38" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="O" android:id="@+id/w39" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="R" android:id="@+id/w40" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w41" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="A" android:id="@+id/w42" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="C" android:id="@+id/w43" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w44" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+        </LinearLayout>
+        
+        <LinearLayout
+      		android:orientation="horizontal"
+      		android:layout_width="match_parent"
+      		android:layout_height="match_parent"
+     		android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="E" android:id="@+id/w45" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="I" android:id="@+id/w46" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w47" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="S" android:id="@+id/w48" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="X" android:id="@+id/w49" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="L" android:id="@+id/w50" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="M" android:id="@+id/w51" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="Z" android:id="@+id/w52" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="W" android:id="@+id/w53" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w54" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="I" android:id="@+id/w55" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            
+        </LinearLayout>
+        
+        <LinearLayout
+      		android:orientation="horizontal"
+      		android:layout_width="match_parent"
+      		android:layout_height="match_parent"
+      		android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="D" android:id="@+id/w56" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="R" android:id="@+id/w57" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w58" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="I" android:id="@+id/w59" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="A" android:id="@+id/w60" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="U" android:id="@+id/w61" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="J" android:id="@+id/w62" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="V" android:id="@+id/w63" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="I" android:id="@+id/w64" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w65" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="R" android:id="@+id/w66" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            
+        </LinearLayout>
+        
+        <LinearLayout
+      		android:orientation="horizontal"
+      		android:layout_width="match_parent"
+      		android:layout_height="match_parent"
+      		android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="F" android:id="@+id/w67" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="Ü" android:id="@+id/w68" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w69" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="F" android:id="@+id/w70" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="T" android:id="@+id/w71" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="O" android:id="@+id/w72" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="S" android:id="@+id/w73" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w74" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="C" android:id="@+id/w75" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w76" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="S" android:id="@+id/w77" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            
+        </LinearLayout>
+        
+        <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="S" android:id="@+id/w78" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text="I" android:id="@+id/w79" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w80" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="B" android:id="@+id/w81" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w82" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w83" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="L" android:id="@+id/w84" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="A" android:id="@+id/w85" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="C" android:id="@+id/w86" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w87" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="T" android:id="@+id/w88" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" /> 
+            
+        </LinearLayout>
+        
+        <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="N" android:id="@+id/w89" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w90" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="U" android:id="@+id/w91" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w92" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="Z" android:id="@+id/w93" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="E" android:id="@+id/w94" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w95" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w96" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text="E" android:id="@+id/w97" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text="L" android:id="@+id/w98" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="F" android:id="@+id/w99" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            
+        </LinearLayout>
+        
+        <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center">
+            
+            <TextView android:text="Z" android:id="@+id/w100" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text="W" android:id="@+id/w101" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="Ö" android:id="@+id/w102" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="L" android:id="@+id/w103" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="F" android:id="@+id/w104" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="U" android:id="@+id/w105" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="N" android:id="@+id/w106" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="K" android:id="@+id/w107" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="U" android:id="@+id/w108" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="H" android:id="@+id/w109" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text="R" android:id="@+id/w110" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            
+        </LinearLayout>
+        <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center">
+            
+            <LinearLayout android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center" android:id="@+id/bg3">
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" />
+            </LinearLayout>
+           <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" />
+            <LinearLayout android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1" android:gravity="center" android:id="@+id/bg4" android:background="#00000000">
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center"/>
+            <TextView android:text=" "  android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" />
+            </LinearLayout>
+            
+        </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

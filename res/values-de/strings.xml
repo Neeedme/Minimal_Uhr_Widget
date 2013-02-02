@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Text Uhr Widget</string>
+    
+    <string name="PrefFG">Vordergrund</string>
+    <string name="PrefIn">Inaktiv</string>
+    <string name="PrefBG">Hintergrund</string>
+    
+    <string name="PrefCat1Title">Farben</string>
+    <string name="PrefCat2Title">Schrift</string>
+    
+    <string name="PrefFontSize">Schriftgröße</string>
+    
+    <string name="PFGSum">Farbe für die aktuelle Zeit  ändern</string>    
+    <string name="PISum">Farbe für die restlichen Buchstaben ändern</string>    
+    <string name="PBGSum">Farbe des Hintergrundes ändern</string>
+    <string name="PFSSum">Schriftgröße ändern\nStandard sind 15px</string>
+    
+    <string name="DialogTitleFontSize">Wähle Schriftgröße</string>
+    <string name="DialogTitleColor">Wähle eine Farbe</string>
+    <string name="labelPref">Text Uhr Widget Einstellungen</string>
+    
+    <string name="FontSizeYes">Bestätigen</string>    
+    <string name="FontSizeYNo">Abbrechen</string>  
+    
+    <string name="FGContrast">Kontrastfarbe des Vodergrundes</string>
+    <string name="BGContrast">Kontrastfarbe des Hintergrundes</string>    
+</resources>

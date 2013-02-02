@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Text Clock Widget (German) </string>
+    
+    <string name="PrefFG">Foreground</string>
+    <string name="PrefIn">Inactive</string>
+    <string name="PrefBG">Background</string>
+    
+    <string name="PrefCat1Title">Colors</string>
+    <string name="PrefCat2Title">Font</string>
+    
+    <string name="PrefFontSize">Fontsize</string>
+    
+    <string name="PFGSum">Change color for current time</string>    
+    <string name="PISum">Change color for rest of the letters</string>    
+    <string name="PBGSum">Change color of background</string>
+    <string name="PFSSum">Change fontsize</string>
+    
+     <string name="DialogTitleFontSize">Choose fontsize</string>
+     <string name="DialogTitleColor">Pick a Color</string>
+     
+     <string name="labelPref">Text Clock Widget Preferences</string>
+     
+    <string name="FontSizeYes">Confirm</string>    
+    <string name="FontSizeYNo">Cancel</string>  
+    
+    <string name="FGContrast">contrast color of foreground</string>  
+    <string name="BGContrast">contrast color of background</string>
+    
+    
+</resources>
