@@ -59,53 +59,49 @@ public  class UpdateService extends Service {
     
 	public void refreshWidget(Intent intent) {
 		Log.d("UPDATE", "RUNNING");
+		
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		 active=pref.getInt("FG",R.color.defaultForeground);
-		 fontSize=pref.getFloat("FS",15);
-		 inactive=pref.getInt("BG",R.color.defaultInactive);
-		 background=pref.getInt("BG2",R.color.defaultBackground);
+		active=pref.getInt("FG",R.color.defaultForeground);
+		fontSize=pref.getFloat("FS",15);
+		inactive=pref.getInt("BG",R.color.defaultInactive);
+		background=pref.getInt("BG2",R.color.defaultBackground);
 		
-		
-		 Calendar zeit = Calendar.getInstance(); 
+		Calendar zeit = Calendar.getInstance(); 
 		zeit.setTimeInMillis(System.currentTimeMillis());
-   	int h = zeit.get(Calendar.HOUR_OF_DAY);
-       int m = zeit.get(Calendar.MINUTE);
+		int h = zeit.get(Calendar.HOUR_OF_DAY);
+		int m = zeit.get(Calendar.MINUTE);
         
        // Build the widget update for today
        RemoteViews  v = new RemoteViews(this.getPackageName(), R.layout.widget);
        resetColor(v);
        Aktualisieren(h,m,v);
        Schriftgroesse(v);
-       
-       
-
+       // Add Onclick--> Alarm app
        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,getAlarmPackage(this), 0);
        v.setOnClickPendingIntent(R.id.layout, pendingIntent);
        v.setInt(R.id.layout,"setBackgroundColor", background);
   
-
        AppWidgetManager manager = AppWidgetManager.getInstance(this);
        int[] AWID = manager.getAppWidgetIds(new ComponentName(getApplicationContext(), SUNIWidget.class));
        
-       
-       Intent clickIntent = new Intent(this.getApplicationContext(),
-  	          UpdateService.class);
-  	      clickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-  	      clickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,
-           AWID);
-  	      PendingIntent pIntent = PendingIntent.getService(getApplicationContext(), 0, clickIntent,
-  	          PendingIntent.FLAG_UPDATE_CURRENT);
-  	      v.setOnClickPendingIntent(R.id.bg1, pIntent);
-       
+       // Add Onclick left upper corner -> UpdateWidget
+       Intent clickIntent = new Intent(this.getApplicationContext(), UpdateService.class);
+  	   clickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+  	   clickIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, AWID);
+  	   PendingIntent pIntent = PendingIntent.getService(getApplicationContext(), 0, clickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+  	   v.setOnClickPendingIntent(R.id.bg1, pIntent);
+       //Push Updates
+  	   
        if(AWID!=null)
-       	manager.updateAppWidget(AWID, v);
+    	   manager.updateAppWidget(AWID, v);
        else {
-       	ComponentName c = new ComponentName("com.suni.minimal_uhr","SUNIWidget");
-       	manager.updateAppWidget(c, v);
+       		ComponentName c = new ComponentName("com.suni.minimal_uhr","SUNIWidget");
+       		manager.updateAppWidget(c, v);
        }
+       
 	}
-    public Intent getAlarmPackage(Context context)
-    {
+	
+    public Intent getAlarmPackage(Context context) {
     	PackageManager packageManager = context.getPackageManager();
     	Intent AlarmClockIntent = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER);
 
@@ -151,7 +147,6 @@ public  class UpdateService extends Service {
     	return null;
     }
     
-    
     public  void resetColor(RemoteViews v){
 		v.setTextColor(R.id.w1, inactive);v.setTextColor(R.id.w41, inactive);v.setTextColor(R.id.w81, inactive);
 		v.setTextColor(R.id.w2, inactive);v.setTextColor(R.id.w42, inactive);v.setTextColor(R.id.w82, inactive);
@@ -193,14 +188,13 @@ public  class UpdateService extends Service {
 		v.setTextColor(R.id.w38, inactive);v.setTextColor(R.id.w78, inactive);
 		v.setTextColor(R.id.w39, inactive);v.setTextColor(R.id.w79, inactive);
 		v.setTextColor(R.id.w40, inactive);v.setTextColor(R.id.w80, inactive);
-		
-		
-		
+	
 	}
 	
 	 
 		 
 	public   void Aktualisieren(int hour,int min, RemoteViews v) {
+		// "ES IST" Aktiv
 		v.setTextColor(R.id.w1,active);
         v.setTextColor(R.id.w2,active);
 
@@ -212,11 +206,15 @@ public  class UpdateService extends Service {
         
         int rest = min%5;
         min = min - rest;
-        if(min>15) hour+=1;
-
-        if(hour > 12) hour -=12;
+        if(min>15) 
+        	hour+=1;
         
-        if(hour==0) hour =12;
+        if(hour > 12) 
+        	hour -=12;
+        
+        if(hour==0) 
+        	hour =12;
+        
         if(min==15) {
           v.setTextColor(R.id.w41,active);
           v.setTextColor(R.id.w42,active);
@@ -345,8 +343,8 @@ public  class UpdateService extends Service {
           }
 	    }
 	
-public  void getRest(int r,RemoteViews v) {
-     int c4= Color.TRANSPARENT;
+	public  void getRest(int r,RemoteViews v) {
+		int c4= Color.TRANSPARENT;
         
         switch(r) {
             case 1: v.setInt(R.id.bg1, "setBackgroundColor", active);break;
@@ -366,52 +364,50 @@ public  void getRest(int r,RemoteViews v) {
         	}
 		}
 
-private  void Schriftgroesse(RemoteViews v) {
-	// TODO Auto-generated method stub
-	float fontsize = fontSize;
-	v.setFloat(R.id.w1, "setTextSize",  fontsize);v.setFloat(R.id.w41, "setTextSize",  fontsize);v.setFloat(R.id.w81, "setTextSize",  fontsize);
-	v.setFloat(R.id.w2, "setTextSize",  fontsize);v.setFloat(R.id.w42, "setTextSize",  fontsize);v.setFloat(R.id.w82, "setTextSize",  fontsize);
-	v.setFloat(R.id.w3, "setTextSize",  fontsize);v.setFloat(R.id.w43, "setTextSize",  fontsize);v.setFloat(R.id.w83, "setTextSize",  fontsize);
-	v.setFloat(R.id.w4, "setTextSize",  fontsize);v.setFloat(R.id.w44, "setTextSize",  fontsize);v.setFloat(R.id.w84, "setTextSize",  fontsize);
-	v.setFloat(R.id.w5, "setTextSize",  fontsize);v.setFloat(R.id.w45, "setTextSize",  fontsize);v.setFloat(R.id.w85, "setTextSize",  fontsize);
-	v.setFloat(R.id.w6, "setTextSize",  fontsize);v.setFloat(R.id.w46, "setTextSize",  fontsize);v.setFloat(R.id.w86, "setTextSize",  fontsize);
-	v.setFloat(R.id.w7, "setTextSize",  fontsize);v.setFloat(R.id.w47, "setTextSize",  fontsize);v.setFloat(R.id.w87, "setTextSize",  fontsize);
-	v.setFloat(R.id.w8, "setTextSize",  fontsize);v.setFloat(R.id.w48, "setTextSize",  fontsize);v.setFloat(R.id.w88, "setTextSize",  fontsize);
-	v.setFloat(R.id.w9, "setTextSize",  fontsize);v.setFloat(R.id.w49, "setTextSize",  fontsize);v.setFloat(R.id.w89, "setTextSize",  fontsize);
-	v.setFloat(R.id.w10, "setTextSize",  fontsize);v.setFloat(R.id.w50, "setTextSize",  fontsize);v.setFloat(R.id.w90, "setTextSize",  fontsize);
-	v.setFloat(R.id.w11, "setTextSize",  fontsize);v.setFloat(R.id.w51, "setTextSize",  fontsize);v.setFloat(R.id.w91, "setTextSize",  fontsize);
-	v.setFloat(R.id.w12, "setTextSize",  fontsize);v.setFloat(R.id.w52, "setTextSize",  fontsize);v.setFloat(R.id.w92, "setTextSize",  fontsize);
-	v.setFloat(R.id.w13, "setTextSize",  fontsize);v.setFloat(R.id.w53, "setTextSize",  fontsize);v.setFloat(R.id.w93, "setTextSize",  fontsize);
-	v.setFloat(R.id.w14, "setTextSize",  fontsize);v.setFloat(R.id.w54, "setTextSize",  fontsize);v.setFloat(R.id.w94, "setTextSize",  fontsize);
-	v.setFloat(R.id.w15, "setTextSize",  fontsize);v.setFloat(R.id.w55, "setTextSize",  fontsize);v.setFloat(R.id.w95, "setTextSize",  fontsize);
-	v.setFloat(R.id.w16, "setTextSize",  fontsize);v.setFloat(R.id.w56, "setTextSize",  fontsize);v.setFloat(R.id.w96, "setTextSize",  fontsize);
-	v.setFloat(R.id.w17, "setTextSize",  fontsize);v.setFloat(R.id.w57, "setTextSize",  fontsize);v.setFloat(R.id.w97, "setTextSize",  fontsize);
-	v.setFloat(R.id.w18, "setTextSize",  fontsize);v.setFloat(R.id.w58, "setTextSize",  fontsize);v.setFloat(R.id.w98, "setTextSize",  fontsize);
-	v.setFloat(R.id.w19, "setTextSize",  fontsize);v.setFloat(R.id.w59, "setTextSize",  fontsize);v.setFloat(R.id.w99, "setTextSize",  fontsize);
-	v.setFloat(R.id.w20, "setTextSize",  fontsize);v.setFloat(R.id.w60, "setTextSize",  fontsize);v.setFloat(R.id.w100, "setTextSize",  fontsize);
-	v.setFloat(R.id.w21, "setTextSize",  fontsize);v.setFloat(R.id.w61, "setTextSize",  fontsize);v.setFloat(R.id.w101, "setTextSize",  fontsize);
-	v.setFloat(R.id.w22, "setTextSize",  fontsize);v.setFloat(R.id.w62, "setTextSize",  fontsize);v.setFloat(R.id.w102, "setTextSize",  fontsize);
-	v.setFloat(R.id.w23, "setTextSize",  fontsize);v.setFloat(R.id.w63, "setTextSize",  fontsize);v.setFloat(R.id.w103, "setTextSize",  fontsize);
-	v.setFloat(R.id.w24, "setTextSize",  fontsize);v.setFloat(R.id.w64, "setTextSize",  fontsize);v.setFloat(R.id.w104, "setTextSize",  fontsize);
-	v.setFloat(R.id.w25, "setTextSize",  fontsize);v.setFloat(R.id.w65, "setTextSize",  fontsize);v.setFloat(R.id.w105, "setTextSize",  fontsize);
-	v.setFloat(R.id.w26, "setTextSize",  fontsize);v.setFloat(R.id.w66, "setTextSize",  fontsize);v.setFloat(R.id.w106, "setTextSize",  fontsize);
-	v.setFloat(R.id.w27, "setTextSize",  fontsize);v.setFloat(R.id.w67, "setTextSize",  fontsize);v.setFloat(R.id.w107, "setTextSize",  fontsize);
-	v.setFloat(R.id.w28, "setTextSize",  fontsize);v.setFloat(R.id.w68, "setTextSize",  fontsize);v.setFloat(R.id.w108, "setTextSize",  fontsize);
-	v.setFloat(R.id.w29, "setTextSize",  fontsize);v.setFloat(R.id.w69, "setTextSize",  fontsize);v.setFloat(R.id.w109, "setTextSize",  fontsize);
-	v.setFloat(R.id.w30, "setTextSize",  fontsize);v.setFloat(R.id.w70, "setTextSize",  fontsize);v.setFloat(R.id.w110, "setTextSize",  fontsize);
-	v.setFloat(R.id.w31, "setTextSize",  fontsize);v.setFloat(R.id.w71, "setTextSize",  fontsize);
-	v.setFloat(R.id.w32, "setTextSize",  fontsize);v.setFloat(R.id.w72, "setTextSize",  fontsize);
-	v.setFloat(R.id.w33, "setTextSize",  fontsize);v.setFloat(R.id.w73, "setTextSize",  fontsize);
-	v.setFloat(R.id.w34, "setTextSize",  fontsize);v.setFloat(R.id.w74, "setTextSize",  fontsize);
-	v.setFloat(R.id.w35, "setTextSize",  fontsize);v.setFloat(R.id.w75, "setTextSize",  fontsize);
-	v.setFloat(R.id.w36, "setTextSize",  fontsize);v.setFloat(R.id.w76, "setTextSize",  fontsize);
-	v.setFloat(R.id.w37, "setTextSize",  fontsize);v.setFloat(R.id.w77, "setTextSize",  fontsize);
-	v.setFloat(R.id.w38, "setTextSize",  fontsize);v.setFloat(R.id.w78, "setTextSize",  fontsize);
-	v.setFloat(R.id.w39, "setTextSize",  fontsize);v.setFloat(R.id.w79, "setTextSize",  fontsize);
-	v.setFloat(R.id.w40, "setTextSize",  fontsize);v.setFloat(R.id.w80, "setTextSize",  fontsize);
+	private  void Schriftgroesse(RemoteViews v) {
+		// TODO Auto-generated method stub
+		float fontsize = fontSize;
+		v.setFloat(R.id.w1, "setTextSize",  fontsize);v.setFloat(R.id.w41, "setTextSize",  fontsize);v.setFloat(R.id.w81, "setTextSize",  fontsize);
+		v.setFloat(R.id.w2, "setTextSize",  fontsize);v.setFloat(R.id.w42, "setTextSize",  fontsize);v.setFloat(R.id.w82, "setTextSize",  fontsize);
+		v.setFloat(R.id.w3, "setTextSize",  fontsize);v.setFloat(R.id.w43, "setTextSize",  fontsize);v.setFloat(R.id.w83, "setTextSize",  fontsize);
+		v.setFloat(R.id.w4, "setTextSize",  fontsize);v.setFloat(R.id.w44, "setTextSize",  fontsize);v.setFloat(R.id.w84, "setTextSize",  fontsize);
+		v.setFloat(R.id.w5, "setTextSize",  fontsize);v.setFloat(R.id.w45, "setTextSize",  fontsize);v.setFloat(R.id.w85, "setTextSize",  fontsize);
+		v.setFloat(R.id.w6, "setTextSize",  fontsize);v.setFloat(R.id.w46, "setTextSize",  fontsize);v.setFloat(R.id.w86, "setTextSize",  fontsize);
+		v.setFloat(R.id.w7, "setTextSize",  fontsize);v.setFloat(R.id.w47, "setTextSize",  fontsize);v.setFloat(R.id.w87, "setTextSize",  fontsize);
+		v.setFloat(R.id.w8, "setTextSize",  fontsize);v.setFloat(R.id.w48, "setTextSize",  fontsize);v.setFloat(R.id.w88, "setTextSize",  fontsize);
+		v.setFloat(R.id.w9, "setTextSize",  fontsize);v.setFloat(R.id.w49, "setTextSize",  fontsize);v.setFloat(R.id.w89, "setTextSize",  fontsize);
+		v.setFloat(R.id.w10, "setTextSize",  fontsize);v.setFloat(R.id.w50, "setTextSize",  fontsize);v.setFloat(R.id.w90, "setTextSize",  fontsize);
+		v.setFloat(R.id.w11, "setTextSize",  fontsize);v.setFloat(R.id.w51, "setTextSize",  fontsize);v.setFloat(R.id.w91, "setTextSize",  fontsize);
+		v.setFloat(R.id.w12, "setTextSize",  fontsize);v.setFloat(R.id.w52, "setTextSize",  fontsize);v.setFloat(R.id.w92, "setTextSize",  fontsize);
+		v.setFloat(R.id.w13, "setTextSize",  fontsize);v.setFloat(R.id.w53, "setTextSize",  fontsize);v.setFloat(R.id.w93, "setTextSize",  fontsize);
+		v.setFloat(R.id.w14, "setTextSize",  fontsize);v.setFloat(R.id.w54, "setTextSize",  fontsize);v.setFloat(R.id.w94, "setTextSize",  fontsize);
+		v.setFloat(R.id.w15, "setTextSize",  fontsize);v.setFloat(R.id.w55, "setTextSize",  fontsize);v.setFloat(R.id.w95, "setTextSize",  fontsize);
+		v.setFloat(R.id.w16, "setTextSize",  fontsize);v.setFloat(R.id.w56, "setTextSize",  fontsize);v.setFloat(R.id.w96, "setTextSize",  fontsize);
+		v.setFloat(R.id.w17, "setTextSize",  fontsize);v.setFloat(R.id.w57, "setTextSize",  fontsize);v.setFloat(R.id.w97, "setTextSize",  fontsize);
+		v.setFloat(R.id.w18, "setTextSize",  fontsize);v.setFloat(R.id.w58, "setTextSize",  fontsize);v.setFloat(R.id.w98, "setTextSize",  fontsize);
+		v.setFloat(R.id.w19, "setTextSize",  fontsize);v.setFloat(R.id.w59, "setTextSize",  fontsize);v.setFloat(R.id.w99, "setTextSize",  fontsize);
+		v.setFloat(R.id.w20, "setTextSize",  fontsize);v.setFloat(R.id.w60, "setTextSize",  fontsize);v.setFloat(R.id.w100, "setTextSize",  fontsize);
+		v.setFloat(R.id.w21, "setTextSize",  fontsize);v.setFloat(R.id.w61, "setTextSize",  fontsize);v.setFloat(R.id.w101, "setTextSize",  fontsize);
+		v.setFloat(R.id.w22, "setTextSize",  fontsize);v.setFloat(R.id.w62, "setTextSize",  fontsize);v.setFloat(R.id.w102, "setTextSize",  fontsize);
+		v.setFloat(R.id.w23, "setTextSize",  fontsize);v.setFloat(R.id.w63, "setTextSize",  fontsize);v.setFloat(R.id.w103, "setTextSize",  fontsize);
+		v.setFloat(R.id.w24, "setTextSize",  fontsize);v.setFloat(R.id.w64, "setTextSize",  fontsize);v.setFloat(R.id.w104, "setTextSize",  fontsize);
+		v.setFloat(R.id.w25, "setTextSize",  fontsize);v.setFloat(R.id.w65, "setTextSize",  fontsize);v.setFloat(R.id.w105, "setTextSize",  fontsize);
+		v.setFloat(R.id.w26, "setTextSize",  fontsize);v.setFloat(R.id.w66, "setTextSize",  fontsize);v.setFloat(R.id.w106, "setTextSize",  fontsize);
+		v.setFloat(R.id.w27, "setTextSize",  fontsize);v.setFloat(R.id.w67, "setTextSize",  fontsize);v.setFloat(R.id.w107, "setTextSize",  fontsize);
+		v.setFloat(R.id.w28, "setTextSize",  fontsize);v.setFloat(R.id.w68, "setTextSize",  fontsize);v.setFloat(R.id.w108, "setTextSize",  fontsize);
+		v.setFloat(R.id.w29, "setTextSize",  fontsize);v.setFloat(R.id.w69, "setTextSize",  fontsize);v.setFloat(R.id.w109, "setTextSize",  fontsize);
+		v.setFloat(R.id.w30, "setTextSize",  fontsize);v.setFloat(R.id.w70, "setTextSize",  fontsize);v.setFloat(R.id.w110, "setTextSize",  fontsize);
+		v.setFloat(R.id.w31, "setTextSize",  fontsize);v.setFloat(R.id.w71, "setTextSize",  fontsize);
+		v.setFloat(R.id.w32, "setTextSize",  fontsize);v.setFloat(R.id.w72, "setTextSize",  fontsize);
+		v.setFloat(R.id.w33, "setTextSize",  fontsize);v.setFloat(R.id.w73, "setTextSize",  fontsize);
+		v.setFloat(R.id.w34, "setTextSize",  fontsize);v.setFloat(R.id.w74, "setTextSize",  fontsize);
+		v.setFloat(R.id.w35, "setTextSize",  fontsize);v.setFloat(R.id.w75, "setTextSize",  fontsize);
+		v.setFloat(R.id.w36, "setTextSize",  fontsize);v.setFloat(R.id.w76, "setTextSize",  fontsize);
+		v.setFloat(R.id.w37, "setTextSize",  fontsize);v.setFloat(R.id.w77, "setTextSize",  fontsize);
+		v.setFloat(R.id.w38, "setTextSize",  fontsize);v.setFloat(R.id.w78, "setTextSize",  fontsize);
+		v.setFloat(R.id.w39, "setTextSize",  fontsize);v.setFloat(R.id.w79, "setTextSize",  fontsize);
+		v.setFloat(R.id.w40, "setTextSize",  fontsize);v.setFloat(R.id.w80, "setTextSize",  fontsize);
 	
 		}
-    
-
 
 }
