@@ -1,32 +1,32 @@
 package com.suni.minimal_uhr;
 
+import android.annotation.SuppressLint;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+
 import android.graphics.Color;
+
 import android.os.Bundle;
+
 import android.preference.PreferenceManager;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 
 import android.view.KeyEvent;
 import android.view.View.OnClickListener;
-
 import android.view.View;
-
 
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 import com.suni.minimal_uhr.ColorCircle.OnColorChangedListener;
-import com.suni.minimal_uhr.R;
-
-
-
 
 public class ColorPickerActivity extends Activity 
         implements OnColorChangedListener  {
@@ -85,8 +85,6 @@ public class ColorPickerActivity extends Activity
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
-               
-            
                 overridePendingTransition(R.anim.colorpickeranim,R.anim.exit);
                 
                 setContentView(R.layout.colorpicker);
@@ -103,7 +101,7 @@ public class ColorPickerActivity extends Activity
                 key = mIntent.getStringExtra("key");
                 initializeColor(color);    
                
-        Toast.makeText(getBaseContext(),R.string.PressCenterAdvice, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(),R.string.PressCenterAdvice, Toast.LENGTH_SHORT).show();
         }
         
         void initializeColor(int color) {
@@ -133,7 +131,7 @@ public class ColorPickerActivity extends Activity
         			mColorCircle.setColor(c2);
         			 et.setText(String.format("#%08X", (0xFFFFFFFF & c2)));
             }
-    });
+        	});
         	alphaSelector.setColor(color|0xFF000000);
         	alphaSelector.setAlpha(Color.alpha(color));
         //Alpha Init ends
@@ -196,18 +194,16 @@ public class ColorPickerActivity extends Activity
                 
         
         
-    class ColorPickerState {
+ /*   class ColorPickerState {
         int mColor;
     }
 
-    
-    
     @Override
     public Object onRetainNonConfigurationInstance() {
         ColorPickerState state = new ColorPickerState();
         state.mColor = this.mColorCircle.getColor();
         return state;
-    }
+    } */
         
         
 
@@ -219,13 +215,11 @@ public class ColorPickerActivity extends Activity
                 int gray = (r + g + b) / 3;
                 return Color.argb(a, gray, gray, gray);
         } 
-        
-        
-        public void onColorChanged(View view, int newColor) {
+ 
+		@SuppressLint("NewApi")
+		public void onColorChanged(View view, int newColor) {
         	    isTextUsed=false; //Don't trigger TextWatcher of HexEditText
-        	   
         	    newColor = Color.argb((int) alphaSelector.getAlpha(), Color.red(newColor), Color.green(newColor), Color.blue(newColor));
-        	    
         	    et.setText(String.format("#%08X", (0xFFFFFFFF & newColor)));
         	    
         	    if (view == mColorCircle) { //Circle changed color
@@ -274,11 +268,6 @@ public class ColorPickerActivity extends Activity
         	if(colorPicked)
         		overridePendingTransition(R.anim.colorpickeranim, R.anim.exit2);
         	else
-        	overridePendingTransition(R.anim.colorpickeranim, R.anim.exit);
+        		overridePendingTransition(R.anim.colorpickeranim, R.anim.exit);
         }
-
-
-                    
-
     }
-

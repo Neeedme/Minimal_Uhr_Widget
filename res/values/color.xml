@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="defaultForeground">#fff</color>
-    <color name="defaultInactive">#8666</color>
-    <color name="defaultBackground">#7000</color>
-    
+    <color name="defaultForeground">#ffffffff</color>
+    <color name="defaultInactive">#88333333</color>
+    <color name="defaultBackground">#ee000000</color>
 </resources>

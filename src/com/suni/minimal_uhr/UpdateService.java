@@ -59,12 +59,12 @@ public  class UpdateService extends Service {
     
 	public void refreshWidget(Intent intent) {
 		Log.d("UPDATE", "RUNNING");
-		
+		Context ctx = getApplicationContext();
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-		active=pref.getInt("FG",R.color.defaultForeground);
+		active=pref.getInt("FG",ctx.getResources().getColor(R.color.defaultForeground));
 		fontSize=pref.getFloat("FS",15);
-		inactive=pref.getInt("BG",R.color.defaultInactive);
-		background=pref.getInt("BG2",R.color.defaultBackground);
+		inactive=pref.getInt("BG",ctx.getResources().getColor(R.color.defaultInactive));
+		background=pref.getInt("BG2",ctx.getResources().getColor(R.color.defaultBackground));
 		
 		Calendar zeit = Calendar.getInstance(); 
 		zeit.setTimeInMillis(System.currentTimeMillis());
@@ -344,7 +344,7 @@ public  class UpdateService extends Service {
 	    }
 	
 	public  void getRest(int r,RemoteViews v) {
-		int c4= Color.TRANSPARENT;
+     int c4= Color.TRANSPARENT;
         
         switch(r) {
             case 1: v.setInt(R.id.bg1, "setBackgroundColor", active);break;

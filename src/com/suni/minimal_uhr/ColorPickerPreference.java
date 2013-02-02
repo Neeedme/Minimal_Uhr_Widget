@@ -62,7 +62,7 @@ private void init(Context context, AttributeSet attrs) {
 	   pref=PreferenceManager.getDefaultSharedPreferences(context);
 	   pref.registerOnSharedPreferenceChangeListener(listener);
 	   
-	   mValue= pref.getInt(getKey(),getDefaultColor(getKey()));
+	   mValue= pref.getInt(getKey(),getDefaultColor(getKey(),context));
 }
 
 @Override
@@ -115,17 +115,13 @@ private Bitmap getPreviewBitmap() {
 	return bm;
 }
 
-static public int getDefaultColor(String key) {
+ static public int getDefaultColor(String key, Context ctx) {
 	if(key.equals("FG"))
-		return R.color.defaultForeground;
+		return ctx.getResources().getColor(R.color.defaultForeground);
 	else if(key.equals("BG"))
-		return R.color.defaultInactive;
+		return ctx.getResources().getColor(R.color.defaultInactive);
 	else
-		return R.color.defaultBackground;
-	
+		return ctx.getResources().getColor(R.color.defaultBackground);	
 }
-
-
-
 
 }

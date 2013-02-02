@@ -1,15 +1,9 @@
 package com.suni.minimal_uhr;
 
-import com.suni.minimal_uhr.R;
-
-
 import android.preference.Preference;
-
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
-
-
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,8 +11,6 @@ import android.appwidget.AppWidgetManager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-
 
 import android.os.Bundle;
 
@@ -59,13 +51,13 @@ String key="";
 				
 					SharedPreferences pref= PreferenceManager.getDefaultSharedPreferences(this);
 					key=p.getKey();
-					int c = pref.getInt(key, ColorPickerPreference.getDefaultColor(key));
+					int c = pref.getInt(key, ColorPickerPreference.getDefaultColor(key,getBaseContext()));
 
 					Intent i = new Intent(this, ColorPickerActivity.class);
 					i.putExtra("key",key);
 					i.putExtra("EXTRA_COLOR",c);
 					startActivity(i);
-				
+					
 			return true;
 	   
 	}
@@ -75,13 +67,12 @@ String key="";
 	
 		setResult(RESULT_OK, new Intent().putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId));
 		Intent i = new Intent("com.suni.minimal_uhr.Update");
-		sendBroadcast(i);
-		
+		sendBroadcast(i);		
 		super.onBackPressed();
 	}
 	
-
 	
+
 }
 
 
